@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth; /*this is available in chrome beta versions*/
+}
+
+:root {
+  --main: #a2d2ff;
+  --sub_main: #fef9ef;
+  --highlight1: #ff865e;
+  --highlight2: #fee440;
+  --black: rgb(37, 24, 54);
+}
+
+.background {
+  position: relative; /*<--this is to make dir_pop_up on scale */
+  width: 300px;
+  height: 350px;
+}
+
+.background .main {
+  position: absolute;
+  background-color: var(--main);
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.background.show .main {
+  display: none;
+}
+
+.background .main .nav_bar {
+  margin-top: 20px;
+  width: 80%;
+
+  font-size: 12px;
+}
+
+.background .main .nav_bar #dir_button {
+  width: 100%;
+  min-height: 45px;
+  white-space: normal;
+}
+
+.background .main .nav_bar p {
+  margin-left: 3px;
+}
+
+.background .main #add_button {
+  width: 280px;
+  height: 100px;
+  border-radius: 5px;
+  margin-bottom: 120px;
+
+  background: linear-gradient(175deg, var(--highlight2) 65%, #fef9ef 45%);
+  border-style: none solid solid none;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+
+  cursor: pointer;
+  /* pointer-events: none; <-- notsure if I really need this*/
+  transition: all 1s ease;
+}
+
+.background .main #add_button:hover {
+  background: linear-gradient(175deg, var(--highlight1) 65%, #fef9ef 45%);
+}
+
+.background .pop_up {
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 15px 15px 0px 0px; /*top-left top-right bottom-right bottom-left */
+  background: var(--sub_main);
+  /* background: rgba(255, 127, 80, 0.548); */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.background.show .pop_up {
+  opacity: 10;
+  pointer-events: auto;
+}
+
+.background .pop_up .save_button {
+  margin-bottom: 20px;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: linear 0.1s;
+}
+
+.background .pop_up .save_button:hover {
+  color: var(--sub_main);
+  background-color: var(--highlight1);
+}
+
+.background .pop_up .iconify {
+  align-self: flex-end;
+  margin-top: 5px;
+  margin-right: 5px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.background .pop_up .iconify:hover {
+  /*color: var(--highlight1); 
+  this only works when import tag from 3rd party weebsite*/
+  filter: invert(68%) sepia(56%) saturate(3732%) hue-rotate(324deg)
+    brightness(114%) contrast(107%);
+  /*use this website to change color of .svg file like above: 
+    https://codepen.io/sosuke/pen/Pjoqqp*/
+}

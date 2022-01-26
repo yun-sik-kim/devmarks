@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html leng="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>devmarks</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="manifest.json"></script>
+    <script defer src="popup.js"></script>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="main">
+        <div class="nav_bar">
+          <button id="dir_button">
+            This will show the bookmark directory & by clicking you can change
+            the directory
+          </button>
+          <p>directory...</p>
+        </div>
+        <button id="add_button" type="button">ADD!</button>
+      </div>
+
+      <div class="pop_up">
+        <!-- <span id="close" class="iconify" data-icon="bx:bx-x"></span> -->
+        <img id="close" class="iconify" src="/icons/bx-x.svg"/>
+        <p>This is test content</p>
+        <div class="save_bar">
+          <button id="close" class="save_button" type="button">GO!</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
