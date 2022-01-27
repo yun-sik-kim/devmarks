@@ -5,29 +5,23 @@
   "manifest_version": 3,
 
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
 
-  "permissions": [
-    "alarms",
-    "activeTab",
-    "storage",
-    "tabs"
-  ],
+  "permissions": ["alarms", "activeTab", "storage", "tabs"],
 
   "action": {
-      "default_popup": "popup.html",
-      "default_icon": "devmarks.png",
-      "browser_style": true
+    "default_popup": "popup.html",
+    "default_icon": "devmarks.png",
+    "browser_style": true
   }
-
-  // "commands": {
-  //     "_execute_action": {
-  //         "suggested_key": {
-  //         "default": "Ctrl+Shift+S",
-  //         "mac": "MacCtrl+Shift+S"
-  //       },
-  //       "description": "save this site"
-  //     }
-  // }
 }
+// "commands": {
+//     "_execute_action": {
+//         "suggested_key": {
+//         "default": "Ctrl+Shift+S",
+//         "mac": "MacCtrl+Shift+S"
+//       },
+//       "description": "save this site"
+//     }
+// }
